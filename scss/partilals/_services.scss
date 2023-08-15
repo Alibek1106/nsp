@@ -1,0 +1,34 @@
+.services{
+  padding: 150px 0;
+
+  h2{
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    margin-bottom: 50px;
+  }
+
+  .services-boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .services-center{
+      margin-right: auto;
+      margin-left: 40px;
+    }
+ 
+    .services-box{
+      width: calc(33% - 30px);
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 40px;
+
+      h4{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
