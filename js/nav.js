@@ -8,12 +8,15 @@
 // должен размещаться абсолютом и у него должно быть свойство z-index
 
 
+
 function navToggle() {
 
     let navBtn = document.getElementById('navBtn');
     let mainNav = document.getElementById('mainNav');
+    console.log(mainNav.firstElementChild.offsetHeight)
 
     navBtn.onclick = function () {
+        console.log(mainNav.firstElementChild.offsetHeight)
         let heightNav = mainNav.firstElementChild.offsetHeight;
         if (mainNav.classList.contains('nav-hidden')) {
             mainNav.classList.remove('nav-hidden');
