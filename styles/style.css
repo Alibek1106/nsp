@@ -165,6 +165,7 @@ legend {
 .header .header-row .main-nav .header-right {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 @media screen and (max-width: 1200px) {
   .header .header-row .main-nav .header-right {
@@ -185,6 +186,7 @@ legend {
     border-bottom: 1px solid #333;
     padding: 10px 0;
     margin-right: 0;
+    margin-top: 10px;
   }
 }
 .header .header-row .main-nav .language-dropdown {
@@ -299,6 +301,11 @@ legend {
 .hero .hero-sides .hero-right {
   text-align: right;
 }
+@media screen and (max-width: 1024px) {
+  .hero .hero-sides .hero-right {
+    display: none;
+  }
+}
 .hero .hero-sides .hero-right p {
   width: 550px;
   margin-bottom: 66px;
@@ -310,6 +317,70 @@ legend {
   font-size: 15px;
   font-weight: 500;
   border-radius: 7px;
+}
+
+.about-us {
+  display: none;
+  padding: 100px 0 50px;
+}
+@media screen and (max-width: 1024px) {
+  .about-us {
+    display: block;
+  }
+}
+.about-us .about-us-sides {
+  display: flex;
+}
+@media screen and (max-width: 640px) {
+  .about-us .about-us-sides {
+    display: block;
+  }
+}
+.about-us .about-us-sides .about-us-left {
+  width: 30%;
+}
+@media screen and (max-width: 640px) {
+  .about-us .about-us-sides .about-us-left {
+    width: 100%;
+  }
+}
+.about-us .about-us-sides .about-us-left h3 {
+  font-size: 40px;
+  font-weight: 500;
+  border-right: 3px solid #0089EC;
+}
+@media screen and (max-width: 640px) {
+  .about-us .about-us-sides .about-us-left h3 {
+    border-right: none;
+    border-bottom: 1px solid #254470;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}
+.about-us .about-us-sides .about-us-right {
+  width: 70%;
+  padding: 0 0 0 20px;
+}
+@media screen and (max-width: 640px) {
+  .about-us .about-us-sides .about-us-right {
+    padding: 0;
+    width: 100%;
+  }
+}
+.about-us .about-us-sides .about-us-right a {
+  padding: 13px 28px;
+  background-color: #0089EC;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 7px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 30px;
+}
+@media screen and (max-width: 640px) {
+  .about-us .about-us-sides .about-us-right p {
+    font-size: 14px;
+  }
 }
 
 .directions {
@@ -325,19 +396,30 @@ legend {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .directions .direction-boxes {
+    justify-content: space-around;
+  }
 }
 .directions .direction-boxes .direction-box {
-  width: 300px;
+  width: 260px;
+}
+@media screen and (max-width: 1200px) {
+  .directions .direction-boxes .direction-box {
+    width: 400px;
+  }
 }
 .directions .direction-boxes fieldset {
   border: 3px solid #0074BE;
   padding: 15px 20px;
-  width: 300px;
+  width: 100%;
   height: 100%;
 }
 .directions .direction-boxes fieldset h3 {
-  font-size: 23px;
-  margin-bottom: 73px;
+  font-size: 20px;
+  margin-bottom: 50px;
 }
 .directions .direction-boxes fieldset li {
   list-style: none;
@@ -350,7 +432,7 @@ legend {
 }
 
 .services {
-  padding: 150px 0;
+  padding: 150px 0 50px;
 }
 .services h2 {
   font-size: 48px;
@@ -359,24 +441,54 @@ legend {
   font-family: "Noto Serif", serif;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 840px) {
+  .services h2 {
+    font-size: 30px;
+  }
+}
+.services .slider-pagination {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.services .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.services .services-container {
+  position: relative;
+  overflow: hidden;
+}
 .services .services-boxes {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-}
-.services .services-boxes .services-center {
-  margin-right: auto;
-  margin-left: 40px;
 }
 .services .services-boxes .services-box {
   width: calc(33% - 30px);
   font-family: "Montserrat", sans-serif;
   margin-bottom: 40px;
+  padding: 0 20px;
+}
+@media screen and (max-width: 700px) {
+  .services .services-boxes .services-box {
+    padding: 0;
+  }
 }
 .services .services-boxes .services-box h4 {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 700px) {
+  .services .services-boxes .services-box h4 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .services .services-boxes .services-box p {
+    font-size: 13px;
+  }
 }
 
 .coordinates {
@@ -394,8 +506,12 @@ legend {
 .coordinates .coordinate-boxes {
   display: flex;
   flex-wrap: wrap;
-  height: 310px;
   justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .coordinates .coordinate-boxes {
+    gap: 30px;
+  }
 }
 .coordinates .coordinate-boxes .coordinate-box {
   text-align: center;
@@ -403,9 +519,19 @@ legend {
   position: relative;
   padding: 0 80px;
 }
+@media screen and (max-width: 480px) {
+  .coordinates .coordinate-boxes .coordinate-box {
+    padding: 0;
+  }
+}
 .coordinates .coordinate-boxes .coordinate-box:nth-child(2) {
   border-left: 1px solid #696969;
   border-right: 1px solid #696969;
+}
+@media screen and (max-width: 1200px) {
+  .coordinates .coordinate-boxes .coordinate-box:nth-child(2) {
+    border: none;
+  }
 }
 .coordinates .coordinate-boxes .coordinate-box h4 {
   font-size: 28px;
@@ -438,15 +564,15 @@ legend {
   margin-top: 100px;
 }
 
-.footer {
+.footer .container {
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
-.footer a {
+.footer .container a {
   margin: 0 auto;
 }
-.footer p {
+.footer .container p {
   padding-top: 30px;
   border-top: 1px solid #BCBCBC;
   text-align: center;

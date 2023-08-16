@@ -1,7 +1,10 @@
+@use "../var/mixins" as *;
+
 .hero{
   padding: 95px 0 90px;
   background: url("../images/main-bg.png");
   color: #fff;
+
   .hero-sides{
     display: flex;
     justify-content: space-between;
@@ -44,6 +47,10 @@
 
     .hero-right{
       text-align: right;
+
+      @include lg{
+        display: none;
+      }
 
       p{
         width: 550px;

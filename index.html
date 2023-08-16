@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Компания NSP</title>
-  <link rel="stylesheet" href="styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;300;400;500&family=Montserrat:wght@300;400;500;700&family=Noto+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 </head>
 <body>
   <header class="header" id="header">
@@ -27,7 +28,7 @@
               </ul>
             </div>
             <div class="header-right">
-              <a class="header-gps">Наши координаты</a>
+              <a href="https://goo.gl/maps/RWhZXhKsaEvzUq3aA" class="header-gps" target="_blank">Наши координаты</a>
               <div class="header-language-dropdown">
                 <button class="current-language-btn ru" id="currentLanguageBtn">ru</button>
                 <ul class="language-list" id="languageList">
@@ -60,6 +61,20 @@
           <div class="hero-right">
             <p>Лидер в области информационных технологий, системной интеграции, системы гарантированного энергообеспечения и консалтинга. Инженеры компании прошли углубленное обучение на заводах производителей и дистрибьюторских платформах в Москве, Алматы, Франции, Бельгии, Германии и имеют соответствующие сертификаты. Компания авторизована представлять и обслуживать продукцию таких ведущих мировых производителей как: АРС - чемпион среди производителей источников бесперебойного питания; SDMO - дизельные и бензиновые генераторные установки; Fujitsu - компьютерное и серверное оборудование, СХД, решения по виртуализации; CISCO - сетевое оборудование ...</p>
             <a href="#">О компании</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-us">
+      <div class="container">
+        <div class="about-us-sides">
+          <div class="about-us-left">
+            <h3>О НАС</h3>
+          </div>
+          <div class="about-us-right">
+            <p>Лидер в области информационных технологий, системной интеграции, системы гарантированного энергообеспечения и консалтинга. Инженеры компании прошли углубленное обучение на заводах производителей и дистрибьюторских платформах в Москве, Алматы, Франции, Бельгии, Германии и имеют соответствующие сертификаты. Компания авторизована представлять и обслуживать продукцию таких ведущих мировых производителей как: АРС - чемпион среди производителей источников бесперебойного питания; SDMO - дизельные и бензиновые генераторные установки; Fujitsu - компьютерное и серверное оборудование, СХД, решения по виртуализации; CISCO - сетевое оборудование ...</p>
+            <a href="#">О компании</a>
+
           </div>
         </div>
       </div>
@@ -128,40 +143,43 @@
     <section class="services">
       <div class="container">
         <h2>Наши предоставляемые услуги.</h2>
-        <div class="services-boxes">
-          <div class="services-box">
-            <h4>Источники бесперебойного питания</h4>
-            <p>ОсОО NSP является авторизованной компанией и сервис центром APC by Schneider Electric на территории Кыргызстана.</p>
-          </div>
-          <div class="services-box services-center">
-            <h4>Системы Хранения Данных</h4>
-            <p>Компания NSP является партнером компании EMC – лидера в предоставлении универсальных информационных решений по хранению, резервированию, защите и управлению данными</p>
-          </div>
-          <div class="services-box">
-            <h4>Сетевое Оборудование</h4>
-            <p>Компания NSP предлагает ряд сетевых решений на базе оборудования CISCO.</p>
-          </div>
-          <div class="services-box">
-            <h4>Генераторные Установки</h4>
-            <p>ОсОО NSP является авторизованной компанией и сервис центром на территории Кыргызстана, Узбекистана и Таджикистана от французского производителя генераторов SDMO Industries.</p>
-          </div>
-          <div class="services-box services-center">
-            <h4>Серверы Fujitsu</h4>
-            <p>Компания NSP, совместно с компанией Fujitsu, предоставляет решения по Динамическим Центрам Обработки Данных</p>
-          </div>
-          <div class="services-box">
-            <h4>Интеллектуальное здание</h4>
-            <p>Компания NSP предоставляет решения по интеллектуальному дому любой сложности. Инженеры компании прошли обучение в Бельгии, Алматы и Перьми.</p>
-          </div>
-          <div class="services-box">
-            <h4>Оборудование Schneider Electric</h4>
-            <p>Многолетнее партнерство с ведущим европейским производителем широкого спектра оборудования для систем управления электроэнергией позволила компании NSP занять активную позицию в секторе энергетики.</p>
-          </div>
-          <div class="services-box services-center">
-            <h4>VOIP АТС от 3CX</h4>
-            <p>3CX Phone System Предлагает Унифицированные Коммуникации – Легко и Эффективно</p>
+        <div class="services-container swiper-container">
+          <div class="swiper-wrapper services-boxes">
+            <div class="services-box swiper-slide">
+              <h4>Источники бесперебойного питания</h4>
+              <p>ОсОО NSP является авторизованной компанией и сервис центром APC by Schneider Electric на территории Кыргызстана.</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Системы Хранения Данных</h4>
+              <p>Компания NSP является партнером компании EMC – лидера в предоставлении универсальных информационных решений по хранению, резервированию, защите и управлению данными</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Сетевое Оборудование</h4>
+              <p>Компания NSP предлагает ряд сетевых решений на базе оборудования CISCO.</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Генераторные Установки</h4>
+              <p>ОсОО NSP является авторизованной компанией и сервис центром на территории Кыргызстана, Узбекистана и Таджикистана от французского производителя генераторов SDMO Industries.</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Серверы Fujitsu</h4>
+              <p>Компания NSP, совместно с компанией Fujitsu, предоставляет решения по Динамическим Центрам Обработки Данных</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Интеллектуальное здание</h4>
+              <p>Компания NSP предоставляет решения по интеллектуальному дому любой сложности. Инженеры компании прошли обучение в Бельгии, Алматы и Перьми.</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>Оборудование Schneider Electric</h4>
+              <p>Многолетнее партнерство с ведущим европейским производителем широкого спектра оборудования для систем управления электроэнергией позволила компании NSP занять активную позицию в секторе энергетики.</p>
+            </div>
+            <div class="services-box swiper-slide">
+              <h4>VOIP АТС от 3CX</h4>
+              <p>3CX Phone System Предлагает Унифицированные Коммуникации – Легко и Эффективно</p>
+            </div>
           </div>
         </div>
+        <div class="slider-pagination"></div>
       </div>
     </section>
     <section class="coordinates">
@@ -205,15 +223,19 @@
     </section>
   </main>
   <footer class="footer">
-    <button class="btn-to-top"><img src="images/Group%2022.svg" alt=""></button>
-    <p>Copyright © 2008-2021 ОсОО "NSP"</p>
+    <div class="container">
+      <button class="btn-to-top"><img src="images/Group%2022.svg" alt=""></button>
+      <p>Copyright © 2008-2021 ОсОО "NSP"</p>
+    </div>
   </footer>
-<script src="js/language.js"></script>
+  <script src="js/language.js"></script>
   <script src="js/nav.js"></script>
-<script>
-  document.querySelector(".btn-to-top").addEventListener('click', () => {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-  })
-</script>
+  <script>
+    document.querySelector(".btn-to-top").addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
 </body>
 </html>

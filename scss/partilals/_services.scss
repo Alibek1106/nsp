@@ -1,5 +1,7 @@
+@use "../var/mixins" as *;
+
 .services{
-  padding: 150px 0;
+  padding: 150px 0 50px;
 
   h2{
     font-size: 48px;
@@ -7,27 +9,57 @@
     text-align: center;
     font-family: 'Noto Serif', serif;
     margin-bottom: 50px;
+
+    @include md{
+      font-size: 30px;
+    }
+  }
+
+  .slider-pagination{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+  }
+
+  .services-container{
+    position: relative;
+    overflow: hidden;
   }
 
   .services-boxes{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-
-    .services-center{
-      margin-right: auto;
-      margin-left: 40px;
-    }
  
     .services-box{
       width: calc(33% - 30px);
       font-family: 'Montserrat', sans-serif;
       margin-bottom: 40px;
+      padding: 0 20px;
+
+      @include lm{
+        padding: 0;
+      }
 
       h4{
         font-size: 24px;
         font-weight: 500;
         margin-bottom: 20px;
+
+        @include lm{
+          font-size: 18px;
+        }
+      }
+
+      p{
+        @include lm{
+          font-size: 13px;
+        }
       }
     }
   }

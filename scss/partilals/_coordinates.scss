@@ -1,3 +1,5 @@
+@use "../var/mixins" as *;
+
 .coordinates{
   padding: 100px 0;
   font-family: 'Montserrat', sans-serif;
@@ -14,8 +16,11 @@
   .coordinate-boxes{
     display: flex;
     flex-wrap: wrap;
-    height: 310px;
     justify-content: center;
+
+    @include xl{
+      gap: 30px;
+    }
 
     .coordinate-box{
       text-align: center;
@@ -23,9 +28,17 @@
       position: relative;
       padding: 0 80px;
 
-      &:nth-child(2){
+      @include xsm{
+        padding: 0;
+      }
+
+      &:nth-child(2) {
         border-left: 1px solid #696969;
-        border-right: 1px solid #696969;;
+        border-right: 1px solid #696969;
+
+        @include xl {
+          border: none;
+        }
       }
 
       h4{

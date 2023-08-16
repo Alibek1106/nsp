@@ -1,0 +1,67 @@
+@use "../var/mixins" as *;
+
+.about-us{
+  display: none;
+  padding: 100px 0 50px;
+
+  @include lg{
+    display: block;
+  }
+
+  .about-us-sides{
+    display: flex;
+
+    @include sm{
+      display: block;
+    }
+
+    .about-us-left{
+      width: 30%;
+
+      @include sm{
+        width: 100%;
+      }
+
+      h3{
+        font-size: 40px;
+        font-weight: 500;
+        border-right: 3px solid #0089EC;
+
+        @include sm{
+          border-right: none;
+          border-bottom: 1px solid #254470;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .about-us-right{
+      width: 70%;
+      padding: 0 0 0 20px;
+
+      @include sm{
+        padding: 0;
+        width: 100%;
+      }
+
+      a{
+        padding: 13px 28px;
+        background-color: #0089EC;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 7px;
+        color: #fff;
+        display: inline-block;
+        margin-top: 30px;
+      }
+
+      p{
+        @include sm{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
