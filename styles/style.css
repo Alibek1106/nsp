@@ -113,6 +113,7 @@ legend {
 
 .header {
   background-color: #252525;
+  padding: 10px 0;
 }
 .header .header-row {
   display: flex;
@@ -155,6 +156,7 @@ legend {
     margin-left: 0;
     border-bottom: 1px solid #333;
     padding: 10px 0;
+    font-size: 22px;
   }
 }
 .header .header-row .main-nav .header-left .header-links .header-link:hover {
@@ -165,11 +167,12 @@ legend {
 .header .header-row .main-nav .header-right {
   display: flex;
   align-items: center;
-  margin-top: 10px;
 }
 @media screen and (max-width: 1200px) {
   .header .header-row .main-nav .header-right {
     display: block;
+    margin-top: 10px;
+    font-size: 22px;
   }
 }
 .header .header-row .main-nav .header-right .header-gps:hover {
@@ -199,6 +202,11 @@ legend {
   cursor: pointer;
   margin: 18px 0;
 }
+@media screen and (max-width: 1200px) {
+  .header .header-row .main-nav .current-language-btn {
+    font-size: 22px;
+  }
+}
 .header .header-row .main-nav .language-list {
   position: absolute;
   display: none;
@@ -210,6 +218,11 @@ legend {
 }
 .header .header-row .main-nav .language-list li {
   padding: 8px 12px;
+}
+@media screen and (max-width: 1200px) {
+  .header .header-row .main-nav .language-list li {
+    font-size: 22px;
+  }
 }
 .header .header-row .main-nav .language-list li a {
   text-decoration: none;
@@ -236,8 +249,8 @@ legend {
   background: url("../images/kg.svg") no-repeat 5px 50%;
 }
 .header .nav-btn {
-  width: 29px;
-  height: 20px;
+  width: 44px;
+  height: 30px;
   position: absolute;
   right: 20px;
   top: 18px;
@@ -441,9 +454,9 @@ legend {
   font-family: "Noto Serif", serif;
   margin-bottom: 50px;
 }
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1024px) {
   .services h2 {
-    font-size: 30px;
+    font-size: 22px;
   }
 }
 .services .slider-pagination {

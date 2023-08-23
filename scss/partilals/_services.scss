@@ -10,8 +10,8 @@
     font-family: 'Noto Serif', serif;
     margin-bottom: 50px;
 
-    @include md{
-      font-size: 30px;
+    @include lg{
+      font-size: 22px;
     }
   }
 
