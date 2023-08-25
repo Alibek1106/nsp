@@ -591,4 +591,88 @@ legend {
   text-align: center;
 }
 
+.contacts-page {
+  padding: 60px 0;
+}
+.contacts-page h3 {
+  font-weight: 500;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left {
+  width: 50%;
+  padding: 70px 30px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left p {
+  color: #9A9A9A;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left .contacts-page-left-info .contacts-page-left-info-element {
+  padding: 5px 0 5px 55px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left .contacts-page-left-info .contacts-page-left-info-element-1 {
+  background: url("../images/contacts-page-phone.svg") no-repeat 0 50%;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left .contacts-page-left-info .contacts-page-left-info-element-2 {
+  background: url("../images/contacts-page-mail.svg") no-repeat 0 50%;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left .contacts-page-left-info .contacts-page-left-info-element-3 {
+  background: url("../images/contacts-page-home.svg") no-repeat 0 50%;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-left .contacts-page-left-info > *:not(:last-child) {
+  margin-bottom: 70px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right {
+  background: #0089EC;
+  width: 50%;
+  padding: 70px 30px;
+  color: #fff;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right p {
+  margin-bottom: 5px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right input {
+  background: transparent;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right input::placeholder {
+  color: #fff;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right textarea {
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  resize: none;
+  color: #fff;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right textarea::placeholder {
+  color: #fff;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right textarea:focus {
+  outline: none;
+}
+.contacts-page .contacts-page-wrapper .contacts-page-sides .contacts-page-right button {
+  padding: 15px 50px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 30px;
+}
+
 /*# sourceMappingURL=style.css.map */
