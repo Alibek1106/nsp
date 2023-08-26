@@ -63,6 +63,18 @@
         padding: 70px 30px;
         color: #fff;
 
+        .request-has-been-sent{
+          background-color: #0089EC;
+          border-radius: 20px;
+          padding: 10px 20px;
+          position: fixed;
+          top: 40px;
+          right: 40px;
+          color: #fff;
+          transform: translateX(200%);
+          transition: 0.5s;
+        }
+
         p{
           margin-bottom: 5px;
         }

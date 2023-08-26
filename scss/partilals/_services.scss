@@ -9,10 +9,6 @@
     text-align: center;
     font-family: 'Noto Serif', serif;
     margin-bottom: 50px;
-
-    @include lg{
-      font-size: 22px;
-    }
   }
 
   .slider-pagination{
