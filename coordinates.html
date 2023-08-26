@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Компания NSP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;300;400;500&family=Montserrat:wght@300;400;500;700&family=Noto+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-row">
+        <a href="index.html" class="logo"><img src="images/logo.svg" alt=""></a>
+        <nav class="main-nav nav-hidden" id="mainNav">
+          <div class="header-sides">
+            <div class="header-left">
+              <ul class="header-links">
+                <li class="header-link"><a href="">VPS/Хостинг</a></li>
+                <li class="header-link"><a href="">Услуги</a></li>
+                <li class="header-link"><a href="">События</a></li>
+                <li class="header-link"><a href="">Проекты</a></li>
+                <li class="header-link"><a href="contacts.html">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="header-right">
+              <a href="#" class="header-gps">Наши координаты</a>
+              <div class="header-language-dropdown">
+                <button class="current-language-btn ru" id="currentLanguageBtn">ru</button>
+                <ul class="language-list" id="languageList">
+                  <li><a class="language-li ru" href="#">ru</a></li>
+                  <li><a class="language-li eng" href="coordinates.eng.html">eng</a></li>
+                  <li><a class="language-li kg" href="coordinates.kg.html">kg</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <button class="nav-btn" type="button" id="navBtn">
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="coordinates-page-map">
+      <iframe style="width: 100%; margin: 60px 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1461.753049198049!2d74.6716099!3d42.8832678!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb775c177ace3%3A0x90ffa5ee7e359508!2zRGF0YSBDZW50ZXIgTlNQLiDQptC10L3RgtGAINCe0LHRgNCw0LHQvtGC0LrQuCDQlNCw0L3QvdGL0YUgTlNQ!5e0!3m2!1sru!2skg!4v1693052422895!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="coordinates">
+      <div class="container">
+        <div class="coordinate-boxes">
+          <div class="coordinate-box">
+            <h4 class="coordinate-address">наш адрес</h4>
+            <div class="coordinate-links">
+              <a href="#">
+                Кыргызская Республика, Чуй,<br>с. Лебединовка, Ленина 262
+              </a>
+            </div>
+            <img src="images/Line%203.svg" alt="">
+          </div>
+          <div class="coordinate-box">
+            <h4 class="coordinate-phone">наш телефон</h4>
+            <div class="coordinate-links">
+              <a href="#">
+                +996 (312) 976-158
+              </a>
+              <br>
+              <a href="#">
+                факс: +996(312)976-958
+              </a>
+            </div>
+            <img src="images/Line%203.svg" alt="">
+          </div>
+          <div class="coordinate-box">
+            <h4 class="coordinate-email">наша почта</h4>
+            <div class="coordinate-links">
+              <a href="#">
+                e-mail: info@nsp.kg
+              </a>
+            </div>
+            <img src="images/Line%203.svg" alt="">
+          </div>
+        </div>
+        <h5>С удовольствием ответим на все ваши<br>вопросы и предложения!</h5>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <button class="btn-to-top"><img src="images/Group%2022.svg" alt=""></button>
+      <p>Copyright © 2008-2021 ОсОО "NSP"</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelector(".btn-to-top").addEventListener('click', () => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    })
+  </script>
+  <script src="js/language.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
