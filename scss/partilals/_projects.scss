@@ -1,0 +1,82 @@
+.projects-page{
+  padding: 60px 0 100px;
+
+  h2{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    text-decoration: underline;
+  }
+
+  .project-page-boxes{
+    width: 75%;
+    margin: 0 auto;
+
+    .project-page-box:not(:last-child){
+      margin-bottom: 100px;
+    }
+
+    .project-page-box:not(:first-child){
+      background: url("../images/Line 21.svg") no-repeat;
+      padding-top: 70px;
+    }
+
+    .project-page-box{
+      position: relative;
+
+      img{
+        width: 300px;
+        height: 300px;
+        float: left;
+        margin: 0 20px 20px 0;
+        border-radius: 10px;
+      }
+
+      h4{
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      .project-page-text-p{
+        max-height: 260px;
+        overflow: hidden;
+      }
+
+      .project-page-text-p::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70px; /* Высота нижней заблуренной части */
+        background-image: linear-gradient(transparent, rgba(255, 255, 255, 0.8)); /* Градиентный фон */
+        backdrop-filter: blur(2px); /* Размытие фильтром */
+        pointer-events: none; /* Чтобы клики не проходили через заблуренную часть */
+      }
+
+      .show-more-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        bottom: -60;
+        left: 0;
+      }
+
+      .show-more-button:hover {
+        background-color: #0056b3;
+      }
+
+      .show-more-button {
+        display: block;
+      }
+
+      .show-more-button.hidden {
+        display: none;
+      }
+    }
+  }
+}
