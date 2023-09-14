@@ -1,0 +1,136 @@
+@use "../var/mixins" as *;
+
+.instructions{
+  padding: 140px 0;
+  text-align: center;
+
+  h3{
+    font-family: Noto Serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 100px;
+  }
+
+  .instructions-boxes {
+    display: flex;
+    justify-content: space-between;
+    background: url("../images/Line 23.svg") no-repeat 0 50%;
+    background-size: 100%;
+
+    .instructions-box{
+      background-color: #fff;
+      padding: 0 20px;
+
+      @include lg{
+        padding: 0 10px;
+      }
+
+      p{
+        width: 274px;
+      }
+    }
+  }
+}
+
+.quality{
+  padding: 140px 0;
+
+  .quality-sides{
+    display: flex;
+    margin-bottom: 100px;
+
+    .quality-left{
+      width: 50%;
+    }
+
+    .quality-right{
+      width: 50%;
+      padding-left: 50px;
+      margin: auto 0;
+
+      h4{
+        font-family: Noto Serif;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      p{
+        font-size: 23px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .visit{
+    text-align: center;
+
+    h5{
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    a{
+      font-size: 18px;
+    }
+  }
+}
+
+.staff{
+  margin-bottom: 80px;
+  background: linear-gradient(87deg, #C1D1E9 4.72%, #DDEAFA 86.45%, #C0D0E8 111.01%);
+
+  .staff-sides{
+    display: flex;
+
+    .staff-left{
+      width: 50%;
+
+      @include xl{
+        width: 40%;
+      }
+
+      @include lg{
+        width: 35%;
+      }
+    }
+
+    .staff-right{
+      width: 50%;
+      margin: auto 0;
+
+      .staff-logo{
+        display: flex;
+        margin-bottom: 40px;
+
+        .staff-slogan{
+          display: flex;
+          align-items: center;
+
+          span{
+            margin-left: 15px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      h3{
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 28px;
+      }
+      p{
+        font-size: 28px;
+        margin-bottom: 50px;
+        font-weight: 300;
+      }
+
+      a{
+        padding: 15px 38px;
+        color: #0089EC;
+        font-size: 18px;
+        background-color: #fff;
+      }
+    }
+  }
+}
