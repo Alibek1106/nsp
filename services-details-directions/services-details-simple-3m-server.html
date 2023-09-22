@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Компания NSP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;300;400;500&family=Montserrat:wght@300;400;500;700&family=Noto+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header class="header" id="header">
+  <div class="container">
+    <div class="header-row">
+      <a href="../index.html" class="logo"><img src="../images/logo.svg" alt=""></a>
+      <nav class="main-nav nav-hidden" id="mainNav">
+        <div class="header-sides">
+          <div class="header-left">
+            <ul class="header-links">
+              <li class="header-link"><a href="../hosting.html">VPS/Хостинг</a></li>
+              <li class="header-link"><a href="../services.html">Услуги</a></li>
+              <li class="header-link"><a href="../events.html">События</a></li>
+              <li class="header-link"><a href="../projects.html">Проекты</a></li>
+              <li class="header-link"><a href="../contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="header-right">
+            <a href="../coordinates.html" class="header-gps">Наши координаты</a>
+            <div class="header-language-dropdown">
+              <button class="current-language-btn ru" id="currentLanguageBtn">ru</button>
+              <ul class="language-list" id="languageList">
+                <li><a class="language-li ru" href="#">ru</a></li>
+                <li><a class="language-li eng" href="../hosting.eng.html">eng</a></li>
+                <li><a class="language-li kg" href="../hosting.kg.html">kg</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <button class="nav-btn" type="button" id="navBtn">
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="services-details-simple-3m services-details">
+    <div class="container">
+      <h3>Виртуальный сервер</h3>
+      <div class="services-details-sides">
+        <div class="services-details-left">
+          <fieldset id="turntoggle3m">
+            <legend>Автопродление:</legend>
+            <div class="radios">
+              <input type="radio" name="turntoggle3m" id="turnon3m" checked>
+              <label for="turnon3m">Включить</label>
+            </div>
+            <hr style="height: 1px; background:#333;">
+            <div class="radios">
+              <input type="radio" name="turntoggle3m" id="turnoff3m">
+              <label for="turnoff3m">Отключить</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <input type="text" name="domain3m" id="domain3m" placeholder="Доменное имя">
+          </fieldset>
+          <fieldset style="max-height: 500px">
+            <legend>Операционная система:</legend>
+            <div class="radios">
+              <input type="radio" name="os3m" id="centos73m" checked>
+              <label for="centos73m">CentOs 7</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="centos83m">
+              <label for="centos83m">CentOs 8 Stream</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="debian93m">
+              <label for="debian93m">Debian 9</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="freebsd123m">
+              <label for="freebsd123m">FreeBSD 12</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="ubuntu16043m">
+              <label for="ubuntu16043m">Ubuntu 16.04</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="ubuntu18043m">
+              <label for="ubuntu18043m">Ubuntu 18.04</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="ubuntu20043m">
+              <label for="ubuntu20043m">Ubuntu 20.04</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="win10rusgpt3m">
+              <label for="win10rusgpt3m">Windows 10 RUS GPT</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="win10rus3m">
+              <label for="win10rus3m">Windows 10 RUS</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="win103m">
+              <label for="win103m">Windows 10</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="winserv2012r23m">
+              <label for="winserv2012r23m">Windows Server 2012 R2</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="winserv20163m">
+              <label for="winserv20163m">Windows Server 2016</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="winserv2019dc3m">
+              <label for="winserv2019dc3m">Windows Server 2019 Datacenter</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="winserv2019rus3m">
+              <label for="winserv2019rus3m">Windows Server 2019 RUS</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="winserv20193m">
+              <label for="winserv20193m">Windows Server 2019</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="os3m" id="noos3m">
+              <label for="noos3m">NoOs</label>
+            </div>
+          </fieldset>
+          <fieldset style="max-height: 250px">
+            <legend>Дисковое пространство: <span>(39.00 KGS за месяц за 10 ГиБ)</span></legend>
+            <div class="radios">
+              <input type="radio" name="storage3m" id="20gb3m" checked>
+              <label for="20gb3m">20 ГиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="storage3m" id="30gb3m">
+              <label for="30gb3m">30 ГиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="storage3m" id="40gb3m">
+              <label for="40gb3m">40 ГиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="storage3m" id="50gb3m">
+              <label for="50gb3m">50 ГиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="storage3m" id="60gb3m">
+              <label for="60gb3m">60 ГиБ</label>
+            </div>
+          </fieldset>
+          <fieldset style="max-height: 350px">
+            <legend>Оперативная память: <span>(78.00 KGS за месяц за 512 МиБ)</span></legend>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="1536mb3m" checked>
+              <label for="1536mb3m">1536 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="2048mb3m">
+              <label for="2048mb3m">2048 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="2560mb3m">
+              <label for="2560mb3m">2560 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="3072mb3m">
+              <label for="3072mb3m">3072 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="3584mb3m">
+              <label for="3584mb3m">3584 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="4096mb3m">
+              <label for="4096mb3m">4096 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="4608mb3m">
+              <label for="4608mb3m">4608 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="5120mb3m">
+              <label for="5120mb3m">5120 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="5632mb3m">
+              <label for="5632mb3m">5632 МиБ</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ram3m" id="6144mb3m">
+              <label for="6144mb3m">6144 МиБ</label>
+            </div>
+          </fieldset>
+          <fieldset style="max-height: 200px">
+            <legend>Количество процессоров: <span>(156.00 KGS за месяц за 1 Шт.)</span></legend>
+            <div class="radios">
+              <input type="radio" name="cpu3m" id="1cpu3m" checked>
+              <label for="1cpu3m">1 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="cpu3m" id="2cpu3m">
+              <label for="2cpu3m">2 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="cpu3m" id="3cpu3m">
+              <label for="3cpu3m">3 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="cpu3m" id="4cpu3m">
+              <label for="4cpu3m">4 Шт.</label>
+            </div>
+          </fieldset>
+          <fieldset style="max-height: 200px">
+            <legend>Публичные IPv4-адреса: <span>(312.00 KGS за месяц за 1 Шт.)</span></legend>
+            <div class="radios">
+              <input type="radio" name="ipv3m" id="1ipv3m" checked>
+              <label for="1ipv3m">1 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ipv3m" id="2ipv3m">
+              <label for="2ipv3m">2 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ipv3m" id="3ipv3m">
+              <label for="3ipv3m">3 Шт.</label>
+            </div>
+            <div class="radios">
+              <input type="radio" name="ipv3m" id="4ipv3m">
+              <label for="4ipv3m">4 Шт.</label>
+            </div>
+          </fieldset>
+          <fieldset style="max-height: 300px">
+            <legend>Расписание резервного копирования</legend>
+            <div class="radios">
+              <input type="radio" name="backup3m" id="nobackup3m" checked>
+              <label for="nobackup3m">Не использовать</label>
+              <br>
+              <span>0.00 KGS за месяц</span>
+            </div>
+            <div class="radios">
+              <input type="radio" name="backup3m" id="everyday3m">
+              <label for="everyday3m">Ежедневно в 00:00</label>
+              <br>
+              <span>500.00 KGS за месяц</span>
+            </div>
+            <div class="radios">
+              <input type="radio" name="backup3m" id="everyweek3m">
+              <label for="everyweek3m">Еженедельно, каждый<br>понедельник в 03:00</label>
+              <br>
+              <span>200.00 KGS за месяц</span>
+            </div>
+            <div class="radios">
+              <input type="radio" name="backup3m" id="everymonth3m">
+              <label for="everymonth3m">Ежемесячно, каждый 1-й день в 06:00</label>
+              <br>
+              <span>100.00 KGS за месяц</span>
+            </div>
+          </fieldset>
+        </div>
+        <div class="services-details-right">
+          <fieldset>
+            <legend>Детали заказа:</legend>
+            <ul id="selected-options"></ul>
+            <h3>Итого к оплате:</h3>
+            <p id="total-price">0.00 KGS</p>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="instructions">
+    <div class="container">
+      <h3>Пошаговая инструкция заказа:</h3>
+      <div class="instructions-boxes">
+        <div class="instructions-box">
+          <p>
+            Выберите наболее подходящий тариф и нажмите кнопку "Заказать"
+          </p>
+        </div>
+        <div class="instructions-box">
+          <p>
+            Вы будете перенаправлены в биллинг для осуществления безопасной оплаты
+          </p>
+        </div>
+        <div class="instructions-box">
+          <p>
+            Совершив оплату, вы получите на почту письмо с данными для доступа к услуге
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr style="height: 1px; background-color:#A8A8A8;">
+  <section class="quality">
+    <div class="container">
+      <div class="quality-sides">
+        <div class="quality-left">
+          <img src="../images/Rectangle%20538.jpg" alt="">
+        </div>
+        <div class="quality-right">
+          <h4>Высокое качество и современное оборудование.</h4>
+          <p>Ваш проект будет работать всегда стабильно благодаря высокому уровню качества нашего сервиса и самому соверменному оборудованию расположенного в надежном дата-центре.</p>
+        </div>
+      </div>
+      <div class="visit">
+        <h5>Приходите к нам в офис</h5>
+        <a href="https://www.google.com/maps/place/Data+Center+NSP.+%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+%D0%94%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+NSP/@42.8832678,74.6716099,18.92z/data=!4m6!3m5!1s0x389eb775c177ace3:0x90ffa5ee7e359508!8m2!3d42.8832916!4d74.6714127!16s%2Fg%2F11j2xbvmzr?entry=tts&shorturl=1">Кыргызская Республика, Чуй, с. Лебединовка, Ленина 262</a>
+      </div>
+    </div>
+  </section>
+  <section class="staff">
+    <div class="container">
+      <div class="staff-sides">
+        <div class="staff-left">
+          <img src="../images/beautiful-smiling-woman-looking-friendly-ready-help-customer-client-holding-hands-together-staring-camera-white-background%201.png" alt="">
+        </div>
+        <div class="staff-right">
+          <div class="staff-logo">
+            <img src="../images/logo-black.svg" alt="">
+            <div class="staff-slogan">
+              <span>network</span>
+              <span>servers</span>
+              <span>power</span>
+            </div>
+          </div>
+          <h3>Квалифицированный персонал</h3>
+          <p>Быстро получите ответ на любой ваш вопрос от квалифицированных системых администраторов.</p>
+          <a href="../contacts.html">Написать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <button class="btn-to-top"><img src="../images/Group%2022.svg" alt=""></button>
+    <p>Copyright © 2008-2021 ОсОО "NSP"</p>
+  </div>
+</footer>
+<script>
+    document.querySelector(".btn-to-top").addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    })
+</script>
+<script src="../js/language.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/servicesDetail.js"></script>
+</body>
+</html>

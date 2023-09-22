@@ -1,5 +1,218 @@
 @use "../var/mixins" as *;
 
+.hosting-hero{
+  padding: 60px 0 0;
+  background: linear-gradient(180deg, rgba(235, 235, 235, 0.00) 0%, #EFEFEF 100%);
+
+  h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .payment-period{
+    margin-bottom: 70px;
+
+    span{
+      font-size: 20px;
+      color: #8D8D8D;
+      padding-right: 184px;
+      background: url("../images/Line 16.svg") no-repeat 100% 65%;
+    }
+
+    .payment-dates{
+      margin-left: 35px;
+      font-size: 20px;
+      text-decoration: underline;
+      transition: 0.3s ease;
+    }
+
+    .payment-date-active{
+      color: #0089EC;
+    }
+  }
+
+  .payment-boxes{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    .payment-box-simple{
+      background: #000637 url("../images/s1mple_png-01-removebg-preview.png") no-repeat 100% 50%;
+    }
+
+    .payment-box-advance{
+      background: #000637 url("../images/advanced_png-01-removebg-preview.png") no-repeat 100% 50%;
+    }
+
+    .payment-box-corporate{
+      background: #000637 url("../images/corporate_png-01-removebg-preview.png") no-repeat 100% 50%;
+
+    }
+
+    .payment-box{
+      width: 32%;
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+
+      p{
+        color: #ABABAB;
+      }
+
+      h3{
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        font-weight: 700;
+      }
+
+      .price{
+        font-size: 28px;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      a{
+        margin-top: 25px;
+        border-radius: 4px;
+        background: #fff;
+        padding: 13px 59px;
+        color: #0074BE;
+        font-size: 18px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .services-types{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a{
+      padding: 14px 0 14px 52px;
+    }
+
+    .server{
+      background: url("../../images/Group 60.svg") no-repeat 0 50%;
+    }
+
+    .hosting{
+      background: url("../../images/Group 62.svg") no-repeat 0 50%;
+    }
+
+    .storage{
+      background: url("../../images/Group 64.svg") no-repeat 0 50%;
+    }
+
+    .ssl{
+      background: url("../../images/Group 65.svg") no-repeat 0 50%;
+    }
+
+    .services-type-active{
+      border-bottom: 3px solid #0089EC;
+    }
+  }
+}
+
+.services-details-3m{
+  display: none;
+}
+
+.services-details-6m{
+  display: none;
+}
+
+.services-details-12m{
+  display: none;
+}
+
+.services-details{
+  padding: 60px 0;
+  background: linear-gradient(180deg, rgba(235, 235, 235, 0.00) 0%, #EFEFEF 100%);
+
+  h3{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  .services-details-sides{
+    display: flex;
+    justify-content: space-between;
+
+    .services-details-left{
+      width: 67%;
+      fieldset{
+        font-size: 20px;
+        border: 1px solid #333;
+        padding: 25px 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        legend{
+          padding: 0 15px;
+
+          span{
+            color: #979797;
+            font-weight: 300;
+          }
+        }
+
+        input{
+          background-color: transparent;
+        }
+
+        .radios{
+          margin: 13px 0;
+          span{
+            font-size: 23px;
+            font-weight: 300;
+            color: #333;
+          }
+        }
+      }
+    }
+
+    .services-details-right{
+      width: 30%;
+
+      fieldset{
+        border: 1px solid #333;
+        padding: 25px 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        legend{
+          padding: 0 15px;
+          font-size: 20px;
+        }
+
+        li{
+          margin: 20px 0;
+        }
+
+        hr{
+          height: 1px;
+          background-color: #000;
+        }
+
+        h3{
+          margin: 20px 0;
+        }
+
+        #total-price{
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
+
 .instructions{
   padding: 140px 0;
   text-align: center;

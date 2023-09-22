@@ -1,0 +1,8 @@
+<svg width="41" height="49" viewBox="0 0 41 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 65">
+<path id="Vector 113" d="M22.8561 28.8653L31 25.375L39.1439 28.8653C39.5116 29.0228 39.75 29.3844 39.75 29.7844V39.3931C39.75 41.5462 38.5963 43.5343 36.7268 44.6025L31 47.875L25.2732 44.6025C23.4037 43.5343 22.25 41.5462 22.25 39.3931V29.7844C22.25 29.3844 22.4884 29.0228 22.8561 28.8653Z" stroke="#002ABD" stroke-width="2" stroke-linejoin="round"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1 0H0V1V44.125V45.125H1H19.75V43.125H2V2H35V24.125H37V1V0H36H1Z" fill="black"/>
+<line id="Line 18" x1="6" y1="7.375" x2="24.75" y2="7.375" stroke="black"/>
+<line id="Line 19" x1="6" y1="11.125" x2="29.75" y2="11.125" stroke="black"/>
+</g>
+</svg>
