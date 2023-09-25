@@ -13,22 +13,26 @@
   .payment-period{
     margin-bottom: 70px;
 
-    span{
-      font-size: 20px;
-      color: #8D8D8D;
-      padding-right: 184px;
-      background: url("../images/Line 16.svg") no-repeat 100% 65%;
-    }
+    .payment-dates-wrapper{
+      display: flex;
 
-    .payment-dates{
-      margin-left: 35px;
-      font-size: 20px;
-      text-decoration: underline;
-      transition: 0.3s ease;
-    }
+      span{
+        font-size: 20px;
+        color: #8D8D8D;
+        padding-right: 184px;
+        background: url("../images/Line 16.svg") no-repeat 100% 65%;
+      }
 
-    .payment-date-active{
-      color: #0089EC;
+      .payment-dates{
+        margin-left: 35px;
+        font-size: 20px;
+        text-decoration: underline;
+        transition: 0.3s ease;
+      }
+
+      .payment-date-active{
+        color: #0089EC;
+      }
     }
   }
 
@@ -207,6 +211,16 @@
 
         #total-price{
           font-size: 23px;
+        }
+
+        button{
+          color: #fff;
+          padding: 15px 35px;
+          background: #0089EC;
+          font-size: 18px;
+          display: inline-block;
+          margin-top: 20px;
+          border-radius: 4px;
         }
       }
     }

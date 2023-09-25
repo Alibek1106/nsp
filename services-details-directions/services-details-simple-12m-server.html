@@ -63,7 +63,7 @@
             </div>
           </fieldset>
           <fieldset>
-            <input type="text" placeholder="Доменное имя">
+            <input type="text" placeholder="Доменное имя" name="domain12m" id="domain12m">
           </fieldset>
           <fieldset style="max-height: 500px">
             <legend>Операционная система:</legend>
@@ -248,19 +248,19 @@
               <input type="radio" name="backup12m" id="everyday12m">
               <label for="everyday12m">Ежедневно в 00:00</label>
               <br>
-              <span>500.00 KGS за месяц</span>
+              <span>5000.00 KGS за месяц</span>
             </div>
             <div class="radios">
               <input type="radio" name="backup12m" id="everyweek12m">
               <label for="everyweek12m">Еженедельно, каждый<br>понедельник в 03:00</label>
               <br>
-              <span>200.00 KGS за месяц</span>
+              <span>2000.00 KGS за месяц</span>
             </div>
             <div class="radios">
               <input type="radio" name="backup12m" id="everymonth12m">
               <label for="everymonth12m">Ежемесячно, каждый 1-й день в 06:00</label>
               <br>
-              <span>100.00 KGS за месяц</span>
+              <span>1000.00 KGS за месяц</span>
             </div>
           </fieldset>
         </div>
@@ -270,6 +270,7 @@
             <ul id="selected-options"></ul>
             <h3>Итого к оплате:</h3>
             <p id="total-price">0.00 KGS</p>
+            <button>В корзину</button>
           </fieldset>
         </div>
       </div>
@@ -352,6 +353,115 @@
 </script>
 <script src="../js/language.js"></script>
 <script src="../js/nav.js"></script>
-<script src="../js/servicesDetail.js"></script>
+<script>
+  const radios = document.querySelectorAll('input[type="radio"]');
+  const selectedOptions = document.getElementById('selected-options');
+  const totalPriceElement = document.getElementById('total-price');
+
+  const parameterPrices = {
+    turntoggle12m: {},
+    os12m: {},
+
+    storage12m: {
+      '20gb12m': 408,
+      '30gb12m': 816,
+      '40gb12m': 1224,
+      '50gb12m': 1632,
+      '60gb12m': 2040,
+    },
+    ram12m: {
+      '1536mb12m': 2385,
+      '2048mb12m': 3180,
+      '2560mb12m': 3975,
+      '3072mb12m': 4770,
+      '3584mb12m': 5565,
+      '4096mb12m': 6360,
+      '4608mb12m': 7155,
+      '5120mb12m': 7950,
+      '5632mb12m': 8745,
+      '6144mb12m': 9540,
+    },
+    cpu12m: {
+      '1cpu12m': 1590,
+      '2cpu12m': 3180,
+      '3cpu12m': 4770,
+      '4cpu12m': 6360,
+    },
+    ipv12m: {
+      '1ipv12m': 3180,
+      '2ipv12m': 6360,
+      '3ipv12m': 9540,
+      '4ipv12m': 12720,
+    },
+    backup12m: {
+      'nobackup12m': 0,
+      'everyday12m': 5000,
+      'everyweek12m': 2000,
+      'everymonth12m': 1000,
+    },
+  };
+
+
+  const legends = {
+    'turntoggle12m': 'Автопродление',
+    'os12m': 'Операционная система',
+    'storage12m': 'Дисковое пространство',
+    'ram12m': 'Оперативная память',
+    'cpu12m': 'Количество процессоров',
+    'ipv12m': 'Публичные IPv4-адреса',
+    'backup12m': 'Расписание резервного копирования',
+    'domain12m': 'Доменное имя',
+  };
+
+
+  function calculateTotalPrice() {
+    const selectedOptionsList = [];
+    let totalPrice = 0;
+
+    radios.forEach(radio => {
+      if (radio.checked) {
+        const name = radio.name;
+        const id = radio.id;
+        const price = parameterPrices[name][id] || 0;
+
+        if (price > 0) {
+          totalPrice += price;
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent} - ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}</li><hr>`);
+        } else {
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent}</li><hr>`);
+        }
+      }
+    });
+
+    const domainNameInput = document.getElementById('domain12m');
+    const domainName = domainNameInput.value.trim();
+
+    if (domainName) {
+      selectedOptionsList.push(`<li>${legends['domain12m']}: ${domainName}</li><hr>`);
+    }
+
+    selectedOptions.innerHTML = selectedOptionsList.join('');
+    totalPriceElement.textContent = totalPrice > 0 ? totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'KGS' }) : '';
+  }
+
+  function handleRadioChange() {
+    calculateTotalPrice();
+  }
+
+  function handleDomainNameChange() {
+    calculateTotalPrice();
+  }
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', handleRadioChange);
+  });
+
+  const domainNameInput = document.getElementById('domain12m');
+  domainNameInput.addEventListener('input', handleDomainNameChange);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateTotalPrice();
+  });
+</script>
 </body>
 </html>

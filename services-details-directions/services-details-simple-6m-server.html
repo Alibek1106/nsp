@@ -248,19 +248,19 @@
               <input type="radio" name="backup6m" id="everyday6m">
               <label for="everyday6m">Ежедневно в 00:00</label>
               <br>
-              <span>500.00 KGS за месяц</span>
+              <span>2700.00 KGS за месяц</span>
             </div>
             <div class="radios">
               <input type="radio" name="backup6m" id="everyweek6m">
               <label for="everyweek6m">Еженедельно, каждый<br>понедельник в 03:00</label>
               <br>
-              <span>200.00 KGS за месяц</span>
+              <span>1080.00 KGS за месяц</span>
             </div>
             <div class="radios">
               <input type="radio" name="backup6m" id="everymonth6m">
               <label for="everymonth6m">Ежемесячно, каждый 1-й день в 06:00</label>
               <br>
-              <span>100.00 KGS за месяц</span>
+              <span>590.00 KGS за месяц</span>
             </div>
           </fieldset>
         </div>
@@ -270,6 +270,7 @@
             <ul id="selected-options"></ul>
             <h3>Итого к оплате:</h3>
             <p id="total-price">0.00 KGS</p>
+            <button>В корзину</button>
           </fieldset>
         </div>
       </div>
@@ -352,6 +353,116 @@
 </script>
 <script src="../js/language.js"></script>
 <script src="../js/nav.js"></script>
-<script src="../js/servicesDetail.js"></script>
+<script>
+  const radios = document.querySelectorAll('input[type="radio"]');
+  const selectedOptions = document.getElementById('selected-options');
+  const totalPriceElement = document.getElementById('total-price');
+
+  const parameterPrices = {
+
+    turntoggle6m: {},
+    os6m: {},
+
+    storage6m: {
+      '20gb6m': 420,
+      '30gb6m': 630,
+      '40gb6m': 840,
+      '50gb6m': 1050,
+      '60gb6m': 1260,
+    },
+    ram6m: {
+      '1536mb6m': 1260,
+      '2048mb6m': 1680,
+      '2560mb6m': 2100,
+      '3072mb6m': 2520,
+      '3584mb6m': 2940,
+      '4096mb6m': 3360,
+      '4608mb6m': 3780,
+      '5120mb6m': 4200,
+      '5632mb6m': 4620,
+      '6144mb6m': 5040,
+    },
+    cpu6m: {
+      '1cpu6m': 840,
+      '2cpu6m': 1680,
+      '3cpu6m': 2520,
+      '4cpu6m': 3360,
+    },
+    ipv6m: {
+      '1ipv6m': 1680,
+      '2ipv6m': 3360,
+      '3ipv6m': 5040,
+      '4ipv6m': 6720,
+    },
+    backup6m: {
+      'nobackup6m': 0,
+      'everyday6m': 2700,
+      'everyweek6m': 1080,
+      'everymonth6m': 590,
+    },
+  };
+
+
+  const legends = {
+    'turntoggle6m': 'Автопродление',
+    'os6m': 'Операционная система',
+    'storage6m': 'Дисковое пространство',
+    'ram6m': 'Оперативная память',
+    'cpu6m': 'Количество процессоров',
+    'ipv6m': 'Публичные IPv4-адреса',
+    'backup6m': 'Расписание резервного копирования',
+    'domain6m': 'Доменное имя',
+  };
+
+
+  function calculateTotalPrice() {
+    const selectedOptionsList = [];
+    let totalPrice = 0;
+
+    radios.forEach(radio => {
+      if (radio.checked) {
+        const name = radio.name;
+        const id = radio.id;
+        const price = parameterPrices[name][id] || 0;
+
+        if (price > 0) {
+          totalPrice += price;
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent} - ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}</li><hr>`);
+        } else {
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent}</li><hr>`);
+        }
+      }
+    });
+
+    const domainNameInput = document.getElementById('domain6m');
+    const domainName = domainNameInput.value.trim();
+
+    if (domainName) {
+      selectedOptionsList.push(`<li>${legends['domain6m']}: ${domainName}</li><hr>`);
+    }
+
+    selectedOptions.innerHTML = selectedOptionsList.join('');
+    totalPriceElement.textContent = totalPrice > 0 ? totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'KGS' }) : '';
+  }
+
+  function handleRadioChange() {
+    calculateTotalPrice();
+  }
+
+  function handleDomainNameChange() {
+    calculateTotalPrice();
+  }
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', handleRadioChange);
+  });
+
+  const domainNameInput = document.getElementById('domain6m');
+  domainNameInput.addEventListener('input', handleDomainNameChange);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateTotalPrice();
+  });
+</script>
 </body>
 </html>

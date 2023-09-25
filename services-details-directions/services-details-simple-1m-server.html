@@ -63,7 +63,7 @@
             </div>
           </fieldset>
           <fieldset>
-            <input type="text" name="domain1m" id="domain1m" placeholder="Доменное имя">
+            <input type="text" name="domain1m" id="domain1m" placeholder="Доменное имя" required>
           </fieldset>
           <fieldset style="max-height: 500px">
             <legend>Операционная система:</legend>
@@ -269,6 +269,7 @@
             <ul id="selected-options"></ul>
             <h3>Итого к оплате:</h3>
             <p id="total-price">0.00 KGS</p>
+            <button>В корзину</button>
           </fieldset>
         </div>
       </div>
@@ -350,6 +351,115 @@
 </script>
 <script src="../js/language.js"></script>
 <script src="../js/nav.js"></script>
-<script src="../js/servicesDetail.js"></script>
+<script>
+  const radios = document.querySelectorAll('input[type="radio"]');
+  const selectedOptions = document.getElementById('selected-options');
+  const totalPriceElement = document.getElementById('total-price');
+
+  const parameterPrices = {
+    turntoggle1m: {},
+    os1m: {},
+
+    storage1m: {
+      '20gb1m': 78,
+      '30gb1m': 117,
+      '40gb1m': 156,
+      '50gb1m': 195,
+      '60gb1m': 234,
+    },
+    ram1m: {
+      '1536mb1m': 234,
+      '2048mb1m': 312,
+      '2560mb1m': 390,
+      '3072mb1m': 468,
+      '3584mb1m': 546,
+      '4096mb1m': 624,
+      '4608mb1m': 702,
+      '5120mb1m': 780,
+      '5632mb1m': 858,
+      '6144mb1m': 936,
+    },
+    cpu1m: {
+      '1cpu1m': 156,
+      '2cpu1m': 312,
+      '3cpu1m': 468,
+      '4cpu1m': 624,
+    },
+    ipv1m: {
+      '1ipv1m': 312,
+      '2ipv1m': 624,
+      '3ipv1m': 936,
+      '4ipv1m': 1248,
+    },
+    backup1m: {
+      'nobackup1m': 0,
+      'everyday1m': 500,
+      'everyweek1m': 200,
+      'everymonth1m': 100,
+    },
+  }
+
+
+  const legends = {
+    'turntoggle1m': 'Автопродление',
+    'os1m': 'Операционная система',
+    'storage1m': 'Дисковое пространство',
+    'ram1m': 'Оперативная память',
+    'cpu1m': 'Количество процессоров',
+    'ipv1m': 'Публичные IPv4-адреса',
+    'backup1m': 'Расписание резервного копирования',
+    'domain1m': 'Доменное имя',
+  };
+
+
+  function calculateTotalPrice() {
+    const selectedOptionsList = [];
+    let totalPrice = 0;
+
+    radios.forEach(radio => {
+      if (radio.checked) {
+        const name = radio.name;
+        const id = radio.id;
+        const price = parameterPrices[name][id] || 0;
+
+        if (price > 0) {
+          totalPrice += price;
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent} - ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}</li><hr>`);
+        } else {
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent}</li><hr>`);
+        }
+      }
+    });
+
+    const domainNameInput = document.getElementById('domain1m');
+    const domainName = domainNameInput.value.trim();
+
+    if (domainName) {
+      selectedOptionsList.push(`<li>${legends['domain1m']}: ${domainName}</li><hr>`);
+    }
+
+    selectedOptions.innerHTML = selectedOptionsList.join('');
+    totalPriceElement.textContent = totalPrice > 0 ? totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'KGS' }) : '';
+  }
+
+  function handleRadioChange() {
+    calculateTotalPrice();
+  }
+
+  function handleDomainNameChange() {
+    calculateTotalPrice();
+  }
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', handleRadioChange);
+  });
+
+  const domainNameInput = document.getElementById('domain1m');
+  domainNameInput.addEventListener('input', handleDomainNameChange);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateTotalPrice();
+  });
+</script>
 </body>
 </html>

@@ -299,6 +299,7 @@
             <ul id="selected-options"></ul>
             <h3>Итого к оплате:</h3>
             <p id="total-price">0.00 KGS</p>
+            <button>В корзину</button>
           </fieldset>
         </div>
       </div>
@@ -380,6 +381,128 @@
 </script>
 <script src="../js/language.js"></script>
 <script src="../js/nav.js"></script>
-<script src="../js/servicesDetail.js"></script>
+<script>
+  const radios = document.querySelectorAll('input[type="radio"]');
+  const selectedOptions = document.getElementById('selected-options');
+  const totalPriceElement = document.getElementById('total-price');
+
+  const parameterPrices = {
+
+    // 1 MONTH ADVANCE
+
+
+
+    turntoggle1madvance: {},
+    os1madvance: {},
+
+    storage1madvance: {
+      '40gb1madvance': 156,
+      '50gb1madvance': 195,
+      '60gb1madvance': 234,
+      '70gb1madvance': 273,
+      '80gb1madvance': 312,
+      '90gb1madvance': 351,
+      '100gb1madvance': 390,
+    },
+    ram1madvance: {
+      '2560mb1madvance': 390,
+      '3072mb1madvance': 468,
+      '3584mb1madvance': 546,
+      '4096mb1madvance': 624,
+      '4608mb1madvance': 702,
+      '5120mb1madvance': 780,
+      '5632mb1madvance': 858,
+      '6144mb1madvance': 936,
+      '6656mb1madvance': 1014,
+      '7168mb1madvance': 1092,
+      '7680mb1madvance': 1170,
+      '8192mb1madvance': 1248,
+    },
+    cpu1madvance: {
+      '2cpu1madvance': 312,
+      '3cpu1madvance': 468,
+      '4cpu1madvance': 624,
+      '5cpu1madvance': 780,
+      '6cpu1madvance': 936,
+    },
+    ipv1madvance: {
+      '1ipv1madvance': 312,
+      '2ipv1madvance': 624,
+      '3ipv1madvance': 936,
+      '4ipv1madvance': 1248,
+      '5ipv1madvance': 1560,
+      '6ipv1madvance': 1872,
+    },
+    backup1madvance: {
+      'nobackup1madvance': 0,
+      'everyday1madvance': 600,
+      'everyweek1madvance': 250,
+      'everymonth1madvance': 150,
+    },
+
+  };
+
+
+  const legends = {
+    'turntoggle1madvance': 'Автопродление',
+    'os1madvance': 'Операционная система',
+    'storage1madvance': 'Дисковое пространство',
+    'ram1madvance': 'Оперативная память',
+    'cpu1madvance': 'Количество процессоров',
+    'ipv1madvance': 'Публичные IPv4-адреса',
+    'backup1madvance': 'Расписание резервного копирования',
+    'domain1madvance': 'Доменное имя',
+  };
+
+
+  function calculateTotalPrice() {
+    const selectedOptionsList = [];
+    let totalPrice = 0;
+
+    radios.forEach(radio => {
+      if (radio.checked) {
+        const name = radio.name;
+        const id = radio.id;
+        const price = parameterPrices[name][id] || 0;
+
+        if (price > 0) {
+          totalPrice += price;
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent} - ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}</li><hr>`);
+        } else {
+          selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent}</li><hr>`);
+        }
+      }
+    });
+
+    const domainNameInput = document.getElementById('domain1madvance');
+    const domainName = domainNameInput.value.trim();
+
+    if (domainName) {
+      selectedOptionsList.push(`<li>${legends['domain1madvance']}: ${domainName}</li><hr>`);
+    }
+
+    selectedOptions.innerHTML = selectedOptionsList.join('');
+    totalPriceElement.textContent = totalPrice > 0 ? totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'KGS' }) : '';
+  }
+
+  function handleRadioChange() {
+    calculateTotalPrice();
+  }
+
+  function handleDomainNameChange() {
+    calculateTotalPrice();
+  }
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', handleRadioChange);
+  });
+
+  const domainNameInput = document.getElementById('domain1madvance');
+  domainNameInput.addEventListener('input', handleDomainNameChange);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateTotalPrice();
+  });
+</script>
 </body>
 </html>

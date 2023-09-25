@@ -1,15 +1,11 @@
-
-
-
 const radios = document.querySelectorAll('input[type="radio"]');
 const selectedOptions = document.getElementById('selected-options');
 const totalPriceElement = document.getElementById('total-price');
-const domainInput = document.getElementById('domain1m'); // Добавлено для доменного имени
 
-// Цены для разных параметров
 const parameterPrices = {
     turntoggle1m: {},
     os1m: {},
+
     storage1m: {
         '20gb1m': 78,
         '30gb1m': 117,
@@ -53,12 +49,9 @@ const parameterPrices = {
 
 
     // 3 MONTH
-    turntoggle3m: {
-        // Оставьте цены такими же, как для 1 месяца
-    },
-    os3m: {
-        // Оставьте цены такими же, как для 1 месяца
-    },
+    turntoggle3m: {},
+    os3m: {},
+
     storage3m: {
         '20gb3m': 222,
         '30gb3m': 333,
@@ -105,12 +98,9 @@ const parameterPrices = {
 
 
 
-    turntoggle6m: {
+    turntoggle6m: {},
+    os6m: {},
 
-    },
-    os6m: {
-
-    },
     storage6m: {
         '20gb6m': 420,
         '30gb6m': 630,
@@ -156,12 +146,9 @@ const parameterPrices = {
 
 
 
-    turntoggle12m: {
+    turntoggle12m: {},
+    os12m: {},
 
-    },
-    os12m: {
-
-    },
     storage12m: {
         '20gb12m': 408,
         '30gb12m': 816,
@@ -209,6 +196,7 @@ const parameterPrices = {
 
     turntoggle1madvance: {},
     os1madvance: {},
+
     storage1madvance: {
         '40gb1madvance': 156,
         '50gb1madvance': 195,
@@ -256,13 +244,22 @@ const parameterPrices = {
 
 };
 
-// Обновленная функция для вычисления общей цены
+
+const legends = {
+    'turntoggle1madvance': 'Автопродление',
+    'os1madvance': 'Операционная система',
+    'storage1madvance': 'Дисковое пространство',
+    'ram1madvance': 'Оперативная память',
+    'cpu1madvance': 'Количество процессоров',
+    'ipv1madvance': 'Публичные IPv4-адреса',
+    'backup1madvance': 'Расписание резервного копирования',
+    'domain1madvance': 'Доменное имя',
+};
+
+
 function calculateTotalPrice() {
     const selectedOptionsList = [];
     let totalPrice = 0;
-    let selectedTurntoggle = '';
-    let selectedOs = '';
-    let domainName = '';
 
     radios.forEach(radio => {
         if (radio.checked) {
@@ -270,49 +267,30 @@ function calculateTotalPrice() {
             const id = radio.id;
             const price = parameterPrices[name][id] || 0;
 
-            if (name === 'turntoggle1m') {
-                selectedTurntoggle = `${document.querySelector(`label[for="${id}"]`).textContent}`;
-            } else if (name === 'os1m') {
-                selectedOs = `${document.querySelector(`label[for="${id}"]`).textContent}`;
-            } else if (name === 'domain1m') {
-                domainName = domainInput.value;
-            } else if (price > 0) {
+            if (price > 0) {
                 totalPrice += price;
-                selectedOptionsList.push(`${document.querySelector(`label[for="${id}"]`).textContent}: ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}`);
+                selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent} - ${price.toLocaleString('en-US', { style: 'currency', currency: 'KGS' })}</li><hr>`);
+            } else {
+                selectedOptionsList.push(`<li>${legends[name]}: ${document.querySelector(`label[for="${id}"]`).textContent}</li><hr>`);
             }
         }
     });
 
-    if (selectedTurntoggle !== '') {
-        selectedOptionsList.push(`Автопродление: ${selectedTurntoggle}`);
-    }
-    if (selectedOs !== '') {
-        selectedOptionsList.push(`Операционная система: ${selectedOs}`);
-    }
-    if (domainName !== '') {
-        selectedOptionsList.push(`Доменное имя: ${domainName}`);
-    }
-
     // Добавляем <hr> после каждого элемента <li>
-    selectedOptions.innerHTML = selectedOptionsList.map(option => `<li>${option}</li><hr>`).join('');
+    selectedOptions.innerHTML = selectedOptionsList.join('');
     totalPriceElement.textContent = totalPrice > 0 ? totalPrice.toLocaleString('en-US', { style: 'currency', currency: 'KGS' }) : '';
 }
 
-// Обработчик события изменения радиокнопки
+
+
 function handleRadioChange() {
     calculateTotalPrice();
 }
 
-// Добавляем слушатель события change ко всем радиокнопкам
 radios.forEach(radio => {
     radio.addEventListener('change', handleRadioChange);
 });
 
-// Добавляем слушатель события input для поля доменного имени
-domainInput.addEventListener('input', handleRadioChange);
-
-// Вызываем функцию для вычисления и отображения общей цены при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     calculateTotalPrice();
 });
-

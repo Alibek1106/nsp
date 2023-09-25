@@ -781,19 +781,22 @@ legend {
 .hosting-hero .payment-period {
   margin-bottom: 70px;
 }
-.hosting-hero .payment-period span {
+.hosting-hero .payment-period .payment-dates-wrapper {
+  display: flex;
+}
+.hosting-hero .payment-period .payment-dates-wrapper span {
   font-size: 20px;
   color: #8D8D8D;
   padding-right: 184px;
   background: url("../images/Line 16.svg") no-repeat 100% 65%;
 }
-.hosting-hero .payment-period .payment-dates {
+.hosting-hero .payment-period .payment-dates-wrapper .payment-dates {
   margin-left: 35px;
   font-size: 20px;
   text-decoration: underline;
   transition: 0.3s ease;
 }
-.hosting-hero .payment-period .payment-date-active {
+.hosting-hero .payment-period .payment-dates-wrapper .payment-date-active {
   color: #0089EC;
 }
 .hosting-hero .payment-boxes {
@@ -944,6 +947,15 @@ legend {
 }
 .services-details .services-details-sides .services-details-right fieldset #total-price {
   font-size: 23px;
+}
+.services-details .services-details-sides .services-details-right fieldset button {
+  color: #fff;
+  padding: 15px 35px;
+  background: #0089EC;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 4px;
 }
 
 .instructions {
