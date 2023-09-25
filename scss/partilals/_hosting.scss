@@ -145,8 +145,16 @@
     display: flex;
     justify-content: space-between;
 
+    @include lg{
+      display: block;
+    }
+
     .services-details-left{
       width: 67%;
+
+      @include lg{
+        width: 100%;
+      }
       fieldset{
         font-size: 20px;
         border: 1px solid #333;
@@ -182,6 +190,9 @@
 
     .services-details-right{
       width: 30%;
+      @include lg{
+        width: 100%;
+      }
 
       fieldset{
         border: 1px solid #333;

@@ -890,8 +890,18 @@ legend {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 1024px) {
+  .services-details .services-details-sides {
+    display: block;
+  }
+}
 .services-details .services-details-sides .services-details-left {
   width: 67%;
+}
+@media screen and (max-width: 1024px) {
+  .services-details .services-details-sides .services-details-left {
+    width: 100%;
+  }
 }
 .services-details .services-details-sides .services-details-left fieldset {
   font-size: 20px;
@@ -922,6 +932,11 @@ legend {
 }
 .services-details .services-details-sides .services-details-right {
   width: 30%;
+}
+@media screen and (max-width: 1024px) {
+  .services-details .services-details-sides .services-details-right {
+    width: 100%;
+  }
 }
 .services-details .services-details-sides .services-details-right fieldset {
   border: 1px solid #333;
