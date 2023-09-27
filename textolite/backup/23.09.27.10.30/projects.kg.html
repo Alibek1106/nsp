@@ -13,26 +13,26 @@
 <header class="header" id="header">
   <div class="container">
     <div class="header-row">
-      <a href="index.html" class="logo"><img src="images/logo.svg" alt=""></a>
+      <a href="index.kg.html" class="logo"><img src="images/logo.svg" alt=""></a>
       <nav class="main-nav nav-hidden" id="mainNav">
         <div class="header-sides">
           <div class="header-left">
             <ul class="header-links">
-              <li class="header-link"><a href="hosting.html">VPS/Хостинг</a></li>
-              <li class="header-link"><a href="services.html">Услуги</a></li>
-              <li class="header-link"><a href="events.html">События</a></li>
-              <li class="header-link"><a href="projects.html">Проекты</a></li>
-              <li class="header-link"><a href="contacts.html">Контакты</a></li>
+              <li class="header-link"><a href="hosting.kg.html">VPS/Хостинг</a></li>
+              <li class="header-link"><a href="services.kg.html">Куралдар</a></li>
+              <li class="header-link"><a href="events.kg.html">Окуялар</a></li>
+              <li class="header-link"><a href="projects.kg.html">Долбоорлор</a></li>
+              <li class="header-link"><a href="contacts.kg.html">Байланыш</a></li>
             </ul>
           </div>
           <div class="header-right">
-            <a href="coordinates.html" class="header-gps">Наши координаты</a>
+            <a href="coordinates.kg.html" class="header-gps">Биздин координаттар</a>
             <div class="header-language-dropdown">
-              <button class="current-language-btn ru" id="currentLanguageBtn">ru</button>
+              <button class="current-language-btn kg" id="currentLanguageBtn">kg</button>
               <ul class="language-list" id="languageList">
-                <li><a class="language-li ru" href="#">ru</a></li>
+                <li><a class="language-li kg" href="#">kg</a></li>
+                <li><a class="language-li ru" href="projects.html">ru</a></li>
                 <li><a class="language-li eng" href="projects.eng.html">eng</a></li>
-                <li><a class="language-li kg" href="projects.kg.html">kg</a></li>
               </ul>
             </div>
           </div>
@@ -49,6 +49,14 @@
     <section class="projects-page">
       <h2>Проекты</h2>
       <div class="project-page-boxes">
+        <div class="project-page-box">
+          <img src="images/project15.jpg" alt="">
+          <h4>Строительство первого коммерческого ЦОДа в Бишкеке.</h4>
+          <div class="project-page-text" style="font-weight: 300; color: #333">
+            <p class="project-page-text-p">Центр обработки данных (ЦОД), принадлежащий компании NSP, представляет собой высокотехнологичное и безопасное пространство, предназначенное для хранения и обработки данных, а также для обеспечения надежности и доступности информационных систем. Этот ЦОД обладает множеством важных систем и оборудования, которые обеспечивают его бесперебойную работу.Одной из ключевых систем является система контроля и управления доступом, которая обеспечивает ограниченный доступ к помещению только авторизованным лицам, обеспечивая таким образом безопасность и конфиденциальность данных.Системы обеспечения микроклимата и хладоснабжения поддерживают оптимальные условия окружающей среды для серверного оборудования, что позволяет предотвратить перегрев и повышает его надежность.Охранная сигнализация, подключенная к ПЦН МВД Кыргызской Республики, обеспечивает быструю реакцию на возможные инциденты безопасности, а система видеонаблюдения служит для наблюдения и регистрации событий в помещении ЦОД.Системы пожарной сигнализации и пожаротушения гарантируют быстрое обнаружение и тушение пожаров, что снижает риск повреждения оборудования и потери данных.Гарантированное электропитание и заземление обеспечивают бесперебойную работу ЦОД даже в случае сбоев в основной электросети и защищают от статических электрических разрядов.Также важно отметить, что наличие оборудования и оптоволоконных кабелей от пяти крупных ISP провайдеров делает ЦОД привлекательным местом для организаций как из Кыргызстана, так и из-за рубежа, что способствует разнообразию клиентов и сотрудничеству на мировом уровне. Этот ЦОД играет критическую роль в обеспечении безопасности и доступности данных для разных секторов экономики и международных компаний.</p>
+          </div>
+          <button class="show-more-button">Показать еще</button>
+        </div>
         <div class="project-page-box">
           <img src="images/project14.jpg" alt="">
           <h4>Новый взгляд на погоду с решением PESSL Instruments и Siap+Micros</h4>
@@ -186,26 +194,23 @@
   </div>
 </footer>
 <script>
-    document.querySelector(".btn-to-top").addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    })
+  document.querySelector(".btn-to-top").addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  })
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const showMoreButtons = document.querySelectorAll(".show-more-button");
+  document.addEventListener("DOMContentLoaded", function () {
+    const showMoreButtons = document.querySelectorAll(".show-more-button");
 
-        showMoreButtons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const projectBox = this.closest(".project-page-box");
-                const projectText = projectBox.querySelector(".project-page-text-p");
-
-                // projectText.style.maxHeight = "none";
-                // projectText.style.overflow = "visible";
-                this.style.display = "none";
-                projectText.className = "";
-            });
-        });
+    showMoreButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const projectBox = this.closest(".project-page-box");
+        const projectText = projectBox.querySelector(".project-page-text-p");
+        this.style.display = "none";
+        projectText.className = "";
+      });
     });
+  });
 </script>
 
 <script src="js/language.js"></script>
