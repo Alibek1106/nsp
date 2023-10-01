@@ -387,92 +387,71 @@
 <script src="../js/language.js"></script>
 <script src="../js/nav.js"></script>
 <script>
-    // Находим элементы на странице
-    // Находим все элементы с классом .range-slider
     const rangeSliders = document.querySelectorAll('.range-slider');
 
-    // Перебираем все найденные элементы и добавляем обработчик события для каждого из них
     rangeSliders.forEach(function (rangeSlider) {
-        const sliderOutput = rangeSlider.nextElementSibling; // Находим соответствующий элемент .slider-output
 
         rangeSlider.addEventListener('input', function () {
-            // Обновляем текст элемента вывода
             sliderOutput.textContent = this.value;
         });
     });
 
-</script>
-<script>
     const radios = document.querySelectorAll('input[type="radio"]');
     const selectedOptions = document.getElementById('selected-options');
     const totalPriceElement = document.getElementById('total-price');
 
     const parameterPrices = {
 
-        // 1 MONTH ADVANCE
-
-
-
-        turntoggle1madvance: {},
-        os1madvance: {},
-
-        storage1madvance: {
-            '40gb1madvance': 156,
-            '50gb1madvance': 195,
-            '60gb1madvance': 234,
-            '70gb1madvance': 273,
-            '80gb1madvance': 312,
-            '90gb1madvance': 351,
-            '100gb1madvance': 390,
+        turntoggle1mcorporate: {},
+        os1mcorporate: {},
+        storage1mcorporate: {},
+        ram1mcorporate: {},
+        cpu1mcorporate: {
+            '4cpu1mcorporate': 624,
+                    '5cpu1mcorporate': 780,
+                    '6cpu1mcorporate': 936,
+                    '7cpu1mcorporate': 1092,
+                    '8cpu1mcorporate': 1248,
+                    '9cpu1mcorporate': 1404,
+                    '10cpu1mcorporate': 1560,
+                    '11cpu1mcorporate': 1716,
+                    '12cpu1mcorporate': 1872,
+                    '13cpu1mcorporate': 2028,
+                    '14cpu1mcorporate': 2184,
+                    '15cpu1mcorporate': 2340,
+                    '16cpu1mcorporate': 2496,
         },
-        ram1madvance: {
-            '2560mb1madvance': 390,
-            '3072mb1madvance': 468,
-            '3584mb1madvance': 546,
-            '4096mb1madvance': 624,
-            '4608mb1madvance': 702,
-            '5120mb1madvance': 780,
-            '5632mb1madvance': 858,
-            '6144mb1madvance': 936,
-            '6656mb1madvance': 1014,
-            '7168mb1madvance': 1092,
-            '7680mb1madvance': 1170,
-            '8192mb1madvance': 1248,
+        ipv1mcorporate: {
+            '1ipv1mcorporate': 312,
+                    '2ipv1mcorporate': 624,
+                    '3ipv1mcorporate': 936,
+                    '4ipv1mcorporate': 1248,
+                    '5ipv1mcorporate': 1560,
+                    '6ipv1mcorporate': 1872,
+                    '7ipv1mcorporate': 2184,
+                    '8ipv1mcorporate': 2496,
+                    '9ipv1mcorporate': 2808,
+                    '10ipv1mcorporate': 3120,
         },
-        cpu1madvance: {
-            '2cpu1madvance': 312,
-            '3cpu1madvance': 468,
-            '4cpu1madvance': 624,
-            '5cpu1madvance': 780,
-            '6cpu1madvance': 936,
-        },
-        ipv1madvance: {
-            '1ipv1madvance': 312,
-            '2ipv1madvance': 624,
-            '3ipv1madvance': 936,
-            '4ipv1madvance': 1248,
-            '5ipv1madvance': 1560,
-            '6ipv1madvance': 1872,
-        },
-        backup1madvance: {
-            'nobackup1madvance': 0,
-            'everyday1madvance': 600,
-            'everyweek1madvance': 250,
-            'everymonth1madvance': 150,
+        backup1mcorporate: {
+            'nobackup1mcorporate': 0,
+                    'everyday1mcorporate': 750,
+                    'everyweek1mcorporate': 300,
+                    'everymonth1mcorporate': 200,
         },
 
     };
 
 
     const legends = {
-        'turntoggle1madvance': 'Автопродление',
-        'os1madvance': 'Операционная система',
-        'storage1madvance': 'Дисковое пространство',
-        'ram1madvance': 'Оперативная память',
-        'cpu1madvance': 'Количество процессоров',
-        'ipv1madvance': 'Публичные IPv4-адреса',
-        'backup1madvance': 'Расписание резервного копирования',
-        'domain1madvance': 'Доменное имя',
+        'turntoggle1mcorporate': 'Автопродление',
+        'os1mcorporate': 'Операционная система',
+        'storage1mcorporate': 'Дисковое пространство',
+        'ram1mcorporate': 'Оперативная память',
+        'cpu1mcorporate': 'Количество процессоров',
+        'ipv1mcorporate': 'Публичные IPv4-адреса',
+        'backup1mcorporate': 'Расписание резервного копирования',
+        'domain1mcorporate': 'Доменное имя'
     };
 
 
@@ -495,11 +474,11 @@
             }
         });
 
-        const domainNameInput = document.getElementById('domain1madvance');
+        const domainNameInput = document.getElementById('domain1mcorporate.');
         const domainName = domainNameInput.value.trim();
 
         if (domainName) {
-            selectedOptionsList.push(`<li>${legends['domain1madvance']}: ${domainName}</li><hr>`);
+            selectedOptionsList.push(`<li>${legends['domain1mcorporate']}: ${domainName}</li><hr>`);
         }
 
         selectedOptions.innerHTML = selectedOptionsList.join('');
@@ -518,7 +497,7 @@
         radio.addEventListener('change', handleRadioChange);
     });
 
-    const domainNameInput = document.getElementById('domain1madvance');
+    const domainNameInput = document.getElementById('domain1mcorporate');
     domainNameInput.addEventListener('input', handleDomainNameChange);
 
     document.addEventListener('DOMContentLoaded', () => {

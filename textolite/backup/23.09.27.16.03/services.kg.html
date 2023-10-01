@@ -125,23 +125,23 @@
   </div>
 </footer>
 <script>
-  document.querySelector(".btn-to-top").addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  })
+    document.querySelector(".btn-to-top").addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    })
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const showMoreButtons = document.querySelectorAll(".show-more-button");
+    document.addEventListener("DOMContentLoaded", function () {
+        const showMoreButtons = document.querySelectorAll(".show-more-button");
 
-    showMoreButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const projectBox = this.closest(".project-page-box");
-        const projectText = projectBox.querySelector(".project-page-text-p");
-        this.style.display = "none";
-        projectText.className = "";
-      });
+        showMoreButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                const projectBox = this.closest(".project-page-box");
+                const projectText = projectBox.querySelector(".project-page-text-p");
+                this.style.display = "none";
+                projectText.className = "";
+            });
+        });
     });
-  });
 </script>
 
 <script src="js/language.js"></script>
